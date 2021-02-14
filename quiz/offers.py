@@ -20,11 +20,9 @@ def getOffers(api_endpoint, auth_token, retyable=True, sleep=60, timeout=2):
             elif r.status_code == 500:
                 raise SystemExit(e)
             else:
-                print(e)
-                return None
+                raise e
         except Exception as e:
-            print(e)
-            return None
+            raise e
         if not retyable:
             return None
 
