@@ -4,8 +4,6 @@ The code was tested on Ubuntu 20.04.
 
 ## Requirements
 
-- api_endpoint
-- auth_token
 - data.json
 - python 3.8.5
 
@@ -30,8 +28,6 @@ pip install -r requirements.txt
 ```
 
 ### Run tests
-
-- Add api_endpoint and auth_token on tests/test_offers.py
 
 - Copy and past data.json on root folder
 
