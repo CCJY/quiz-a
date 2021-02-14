@@ -6,7 +6,7 @@ from .export_json import jsonToCsv
 
 # When the status code (429) occurs, sleep 60 then retry the request.
 # When the status code (500) occurs, raise the exception system exit.
-def getOffers(api_endpoint, auth_token, retyable=True, sleep=60, timeout=2):
+def getOffers(api_endpoint: str, auth_token: str, retyable: bool = True, sleep: int = 60, timeout: int = 2) -> dict:
     while True:
         try:
             r = requests.get(api_endpoint, headers={
@@ -27,7 +27,7 @@ def getOffers(api_endpoint, auth_token, retyable=True, sleep=60, timeout=2):
             return None
 
 
-def exportOffersToCsv(offers, filename='offers.csv'):
+def exportOffersToCsv(offers: dict, filename: str = 'offers.csv') -> bool:
     try:
         rows = offers['rows']
         jsonToCsv(rows, filename=filename)
